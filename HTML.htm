@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Part 2 - Web Form + JavaScript</title>
+
+<!-- This project uses a single HTML file with embedded CSS and JavaScript -->
+
+<style>
+/* =========================
+   Tutorial 7 - CSS Styling
+   ========================= */
+
+/* REQUIRED: focus pseudo-class for valid input */
+input:focus:valid {
+    border: 2px solid green;
+    background-color: #eaffea;
+}
+
+/* REQUIRED: focus pseudo-class for invalid input */
+input:focus:invalid {
+    border: 2px solid red;
+    background-color: #ffeaea;
+}
+
+/* REQUIRED: formatted textarea */
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+/* REQUIRED: fieldset formatting */
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Project Part 2 Form</h1>
+
+<!-- =========================
+     Tutorial 7 - Web Forms
+     ========================= -->
+
+<form>
+
+<!-- REQUIRED: multiple fieldsets -->
+<fieldset>
+<legend>Personal Information</legend>
+
+<!-- REQUIRED: text input -->
+<!-- REQUIRED: field length validation (minlength & maxlength) -->
+<label>Name (required):</label>
+<input type="text" name="name" required minlength="3" maxlength="20">
+<br><br>
+
+<!-- REQUIRED: mobile keyboard input (email type) -->
+<!-- REQUIRED: required field validation -->
+<label>Email:</label>
+<input type="email" name="email" required>
+<br><br>
+
+<!-- REQUIRED: date/time input type -->
+<label>Appointment Date & Time:</label>
+<input type="datetime-local" name="appt">
+<br><br>
+
+<!-- REQUIRED: pattern validation -->
+<!-- REQUIRED: required field validation -->
+<label>Phone (123-456-7890):</label>
+<input type="text" pattern="\d{3}-\d{3}-\d{4}" required>
+<br><br>
+</fieldset>
+
+<!-- REQUIRED: second fieldset -->
+<fieldset>
+<legend>Preferences</legend>
+
+<!-- REQUIRED: radio buttons -->
+<p>Contact Method:</p>
+<input type="radio" name="contact" value="email"> Email
+<input type="radio" name="contact" value="phone"> Phone
+<br><br>
+
+<!-- REQUIRED: checkboxes -->
+<p>Interests:</p>
+<input type="checkbox" name="interest1"> Sports
+<input type="checkbox" name="interest2"> Music
+<input type="checkbox" name="interest3"> Tech
+<br><br>
+
+<!-- REQUIRED: spinner (number input) -->
+<label>Quantity:</label>
+<input type="number" min="1" max="10">
+<br><br>
+
+<!-- REQUIRED: range slider -->
+<label>Satisfaction Level:</label>
+<input type="range" min="0" max="100">
+<br><br>
+
+<!-- REQUIRED: selection list -->
+<label>Choose a City:</label>
+<select>
+    <option>Charlotte</option>
+    <option>New York</option>
+    <option>Los Angeles</option>
+</select>
+<br><br>
+
+<!-- REQUIRED: textarea -->
+<label>Comments:</label><br>
+<textarea></textarea>
+<br><br>
+
+<!-- REQUIRED: datalist used with input -->
+<label>Favorite Color:</label>
+<input list="colors" name="color">
+<datalist id="colors">
+    <option value="Red">
+    <option value="Blue">
+    <option value="Green">
+    <option value="Yellow">
+</datalist>
+
+</fieldset>
+
+<!-- REQUIRED: submit button -->
+<button type="submit">Submit</button>
+
+<!-- REQUIRED: reset/cancel button -->
+<button type="reset">Cancel</button>
+
+</form>
+
+<hr>
+
+<!-- =========================
+     Tutorial 9 - JavaScript
+     ========================= -->
+
+<h2>JavaScript Features</h2>
+
+<!-- REQUIRED: output for date/time function -->
+<p id="timeDisplay"></p>
+
+<!-- REQUIRED: output for countdown function -->
+<p id="countdown"></p>
+
+<!-- REQUIRED: output for Math method -->
+<p id="mathOutput"></p>
+
+<script>
+// =========================
+// Tutorial 9 - JavaScript
+// =========================
+
+/* REQUIRED: function that keeps track of current day and time */
+function showDateTime() {
+    const now = new Date();
+    document.getElementById("timeDisplay").innerText =
+        "Current Date/Time: " + now.toString();
+}
+
+/* REQUIRED: call function immediately */
+showDateTime();
+
+/* REQUIRED: run function at a specified interval */
+setInterval(showDateTime, 1000);
+
+
+/* REQUIRED: send an alert */
+alert("Welcome to Project Part 2!");
+
+
+/* REQUIRED: use a Math method */
+let randomNumber = Math.floor(Math.random() * 100);
+document.getElementById("mathOutput").innerText =
+    "Random Number (Math method): " + randomNumber;
+
+
+/* REQUIRED: delay a command */
+setTimeout(function() {
+    console.log("This message is delayed by 3 seconds");
+}, 3000);
+
+
+/* REQUIRED: convert between number and text */
+let num = 42;
+let textVersion = num.toString(); // number → text
+let backToNumber = Number(textVersion); // text → number
+console.log(textVersion, backToNumber);
+
+
+/* REQUIRED: countdown function that updates the page */
+let countdownValue = 10;
+
+function countdown() {
+    document.getElementById("countdown").innerText =
+        "Countdown: " + countdownValue;
+
+    countdownValue--;
+
+    if (countdownValue < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerText = "Done!";
+    }
+}
+
+/* REQUIRED: interval used for countdown */
+let countdownInterval = setInterval(countdown, 1000);
+
+</script>
+
+</body>
+</html>
