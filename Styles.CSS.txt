@@ -1,0 +1,28 @@
+<style>
+/* =========================
+   Tutorial 7 - CSS Styling
+   ========================= */
+
+/* REQUIRED: focus pseudo-class for valid input */
+input:focus:valid {
+    border: 2px solid green;
+    background-color: #eaffea;
+}
+
+/* REQUIRED: focus pseudo-class for invalid input */
+input:focus:invalid {
+    border: 2px solid red;
+    background-color: #ffeaea;
+}
+
+/* REQUIRED: formatted textarea */
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+/* REQUIRED: fieldset formatting */
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+}
