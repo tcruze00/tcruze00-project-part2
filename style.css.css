@@ -1,0 +1,34 @@
+/* Project 1 Requirement: General Styling */
+
+body {
+    font-family: Arial;
+    margin: 20px;
+}
+
+/* Project 1 Requirement: Navigation Styling */
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: blue;
+}
+
+/* Project 1 Requirement: Section Styling */
+section {
+    margin-bottom: 40px;
+}
+
+/* Tutorial 7 Requirement: Focus Validation Styling */
+input:focus:valid {
+    background-color: lightgreen;
+}
+
+/* Tutorial 7 Requirement: Invalid Input Styling */
+input:focus:invalid {
+    background-color: lightcoral;
+}
+
+/* Project 1 Requirement: Fieldset Styling */
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+}
